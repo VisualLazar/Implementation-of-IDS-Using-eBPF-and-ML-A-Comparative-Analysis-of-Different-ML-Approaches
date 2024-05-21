@@ -1,0 +1,25 @@
+import matplotlib.pyplot as plt
+
+metrics = ['Accuracy', 'Precision', 'Recall', 'F1 Score', 'Youden Score']
+scores = [0.99497624, 0.99578708, 0.98430561, 0.99001306, 0.98289538]
+
+
+plt.figure(figsize=(8, 6))
+plt.bar(metrics, scores, color='skyblue')
+plt.xlabel('Metrics')
+plt.ylabel('Scores')
+plt.title('UNSW-NB15 dataset')
+plt.ylim(0.98, 1)  
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.show()
+
+from tabulate import tabulate
+
+
+metrics = ['Accuracy', 'Precision', 'Recall', 'F1 Score', 'Youden Score']
+scores = [0.99497624, 0.99578708, 0.98430561, 0.99001306, 0.98289538]
+
+data = list(zip(metrics, scores))
+
+
+print(tabulate(data, headers=['Metric', 'Score'], tablefmt='grid'))
